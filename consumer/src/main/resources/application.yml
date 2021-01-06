@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: consumer
+
+server:
+  port: 8082
+
+logging:
+  level:
+    com.example.feignhello.service.HelloService: debug #此处要将对应feignClient的日志别设置成DEBUG，因为Feign只对Logger.Level的 DEBUG做出响应,然后在feign.client.config.loggerLevel中配置具体的Feign的日志级别
+
+feign:
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json # 配置压缩支持的MIME TYPE
+      min-request-size: 409600  # 配置压缩数据大小的下限
+    response:
+      enabled: true # 配置响应GZIP压缩
+      min-request-size: 409600
+  client:
+    config:
+      hello: #feignClient的名称,如果写成default,则是针对所有的feignClient
+        connectTimeout: 5000 #连接超时时间
+        readTimeout: 2000 #读超时时间
+        loggerLevel: full #配置日志级别, 默认情况下配置文件中的优先级更高,可选的值是NONE,BASIC,HEADERS,FULL
+
+  hystrix:
+    enabled: false #配置feign的断路器功能是否开启
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+
+#自定义ribbon的超时时间
+#ribbon:
+#  ReadTimeout: 5000
+#  ConnectTimeout: 5000
+#  MaxAutoRetries: 1
+#  MaxAutoRetriesNextServer: 1
+#  OkToRetryOnAllOperations: false
+#  eager-load:
+#    enabled: true
