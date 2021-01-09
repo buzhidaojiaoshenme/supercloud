@@ -16,9 +16,9 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
-	@Autowired
-	@Qualifier("redisTokenStore")
-	private TokenStore tokenStore;
+//	@Autowired
+//	@Qualifier("redisTokenStore")
+//	private TokenStore tokenStore;
 
 //	@Override
 //	public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
@@ -29,6 +29,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
+				.antMatchers("/user/sayHello").hasAuthority("hello")
 				.anyRequest()
 				.authenticated()
 				.and()
