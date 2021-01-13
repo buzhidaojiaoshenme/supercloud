@@ -27,6 +27,6 @@ public interface OrderService {
      * @param id
      * @return
      */
-    Order searchOrderById(Integer id);
+    Order searchOrderById(Integer id) throws Exception;
 
 }

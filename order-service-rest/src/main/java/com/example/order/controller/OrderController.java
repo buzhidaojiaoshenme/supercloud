@@ -44,7 +44,7 @@ public class OrderController {
      * @return
      */
     @GetMapping("/product/{id}")
-    public Order searchOrderById(@PathVariable("id") Integer id) {
+    public Order searchOrderById(@PathVariable("id") Integer id) throws Exception {
         return orderService.searchOrderById(id);
     }
 

@@ -31,6 +31,14 @@ public interface ProductService {
      * @param id
      * @return
      */
-    Product selectProductById(Integer id);
+    Product selectProductById(Integer id) throws Exception;
+
+    /**
+     * 测试断路器熔断
+     *
+     * @param id
+     * @return
+     */
+    Product selectProductByIdTestCircuitBreaker(Integer id) throws Exception;
 
 }

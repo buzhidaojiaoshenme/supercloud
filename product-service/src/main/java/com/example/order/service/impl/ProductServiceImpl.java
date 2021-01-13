@@ -2,6 +2,7 @@ package com.example.order.service.impl;
 
 import com.example.order.pojo.Product;
 import com.example.order.service.ProductService;
+import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -47,14 +48,9 @@ public class ProductServiceImpl implements ProductService {
      * @param id
      * @return
      */
+    @SneakyThrows
     @Override
     public Product selectProductById(Integer id) {
-        try {
-            Thread.sleep(5 * 1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         return new Product(id, "冰箱", 1, 2666D);
     }
 
