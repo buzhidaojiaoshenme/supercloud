@@ -41,4 +41,12 @@ public interface ProductService {
      */
     Product selectProductByIdTestCircuitBreaker(Integer id) throws Exception;
 
+    /**
+     * 测试服务降级
+     *
+     * @param id
+     * @return
+     */
+    Product selectProductByIdTestFallBack(Integer id) throws Exception;
+
 }

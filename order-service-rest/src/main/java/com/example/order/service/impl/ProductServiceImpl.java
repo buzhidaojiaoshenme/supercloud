@@ -102,6 +102,23 @@ public class ProductServiceImpl implements ProductService {
 		return restTemplate.getForObject("http://product-service/product/" + id, Product.class);
 	}
 
+	/**
+	 * 测试服务降级
+	 * 服务降级出发条件:
+	 * 方法抛出非HystrixBadRequest异常
+	 * 方法调用超时
+	 * 熔断器开启
+	 * 线程池/队列/信号量跑满
+	 *
+	 * @param id
+	 * @return
+	 */
+	@HystrixCommand(fallbackMethod = "selectProductByIdFallback")
+	@Override
+	public Product selectProductByIdTestFallBack(Integer id) throws Exception {
+		log.info("=======================服务降级测试: " + LocalDateTime.now());
+		return restTemplate.getForObject("http://product-service/product/" + id, Product.class);
+	}
 
 	// 托底数据
 	private Product selectProductByIdFallback(Integer id) {
