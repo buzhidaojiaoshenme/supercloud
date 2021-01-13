@@ -26,6 +26,7 @@
         <module>resourceserver</module>
         <module>product-service</module>
         <module>order-service-rest</module>
+        <module>order-service-feign</module>
     </modules>
 
     <properties>
