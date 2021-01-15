@@ -47,8 +47,10 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Order searchOrderById(Integer id) throws Exception {
         //return new Order(id, "order-003", "中国", 29000D, Arrays.asList(productService.selectProductById(id)));
-        //return new Order(id, "order-003", "中国", 29000D, Arrays.asList(productService.selectProductByIdTestCircuitBreaker(id)));
-        return new Order(id, "order-003", "中国", 29000D, Arrays.asList(productService.selectProductByIdTestFallBack(id)));
+        //测试服务熔断
+        return new Order(id, "order-003", "中国", 29000D, Arrays.asList(productService.selectProductByIdTestCircuitBreaker(id)));
+        //测试服务降级
+        //return new Order(id, "order-003", "中国", 29000D, Arrays.asList(productService.selectProductByIdTestFallBack(id)));
     }
 
 }

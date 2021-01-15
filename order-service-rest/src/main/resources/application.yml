@@ -19,3 +19,9 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 5000 #配置hystrix的超时时间,默认是1s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
