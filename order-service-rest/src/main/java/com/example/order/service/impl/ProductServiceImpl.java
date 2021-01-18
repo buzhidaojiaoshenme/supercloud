@@ -94,11 +94,11 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public Product selectProductByIdTestCircuitBreaker(Integer id) throws Exception {
 		log.info("=======================断路器熔断测试: " + LocalDateTime.now());
-		if(id == 2) {
+		//if(id == 2) {
 			//模拟发生错误的情况,这个错误可以是在本地方法发生的,也可以是调用远程方法时,远程方法内发生的
 			//(时间窗,最小请求次数,失败百分比,熔断时间),10秒内,请求次数达到5次,失败率在50%,熔断5秒
-			throw new Exception("查询主键为 2 的商品信息导致异常");
-		}
+			//throw new Exception("查询主键为 2 的商品信息导致异常");
+		//}
 		return restTemplate.getForObject("http://product-service/product/" + id, Product.class);
 	}
 
