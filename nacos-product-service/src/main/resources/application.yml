@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: nacos-product-service
+  # 配置 Nacos 注册中心
+  cloud:
+    nacos:
+      discovery:
+        enabled: true # 如果不想使用 Nacos 进行服务注册和发现，设置为 false 即可
+        server-addr: 127.0.0.1:8848 # Nacos 服务器地址   单机模式
+        #server-addr: 192.168.10.100:8848,192.168.10.101:8848,192.168.10.102:8848 # Nacos 服务器地址，集群版直连 ip 模式
+        #server-addr: localhost:80     #Nginx代理模式
+server:
+  port: 7080
+
+

@@ -27,6 +27,8 @@
         <module>product-service</module>
         <module>order-service-rest</module>
         <module>order-service-feign</module>
+        <module>nacos-product-service</module>
+        <module>nacos-order-service</module>
     </modules>
 
     <properties>
