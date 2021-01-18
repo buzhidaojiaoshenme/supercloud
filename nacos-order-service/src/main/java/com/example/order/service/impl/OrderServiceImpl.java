@@ -1,8 +1,8 @@
-package com.example.product.service.impl;
+package com.example.order.service.impl;
 
-import com.example.product.pojo.Order;
-import com.example.product.service.OrderService;
-import com.example.product.service.ProductService;
+import com.example.order.service.OrderService;
+import com.example.order.service.ProductService;
+import com.example.order.pojo.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

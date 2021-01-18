@@ -1,4 +1,4 @@
-package com.example.product;
+package com.example.order;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,9 +12,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients
 @EnableDiscoveryClient
 @SpringBootApplication
-public class NacosOrderServiceFeignApplication {
+public class OrderServiceFeignApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(NacosOrderServiceFeignApplication.class, args);
+        SpringApplication.run(OrderServiceFeignApplication.class, args);
     }
 }

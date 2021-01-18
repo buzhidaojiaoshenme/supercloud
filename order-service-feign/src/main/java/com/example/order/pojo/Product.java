@@ -1,4 +1,4 @@
-package com.example.product.pojo;
+package com.example.order.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

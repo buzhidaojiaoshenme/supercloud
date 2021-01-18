@@ -1,7 +1,7 @@
-package com.example.product.service;
+package com.example.order.service;
 
 
-import com.example.product.pojo.Order;
+import com.example.order.pojo.Order;
 
 public interface OrderService {
 

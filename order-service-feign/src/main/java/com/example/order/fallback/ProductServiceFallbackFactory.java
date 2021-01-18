@@ -1,7 +1,7 @@
-package com.example.product.fallback;
+package com.example.order.fallback;
 
-import com.example.product.pojo.Product;
-import com.example.product.service.ProductService;
+import com.example.order.service.ProductService;
+import com.example.order.pojo.Product;
 import feign.hystrix.FallbackFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

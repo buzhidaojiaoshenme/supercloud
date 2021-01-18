@@ -1,10 +1,7 @@
-package com.example.product.service;
+package com.example.order.service;
 
-import com.example.product.fallback.ProductServiceFallbackFactory;
-import com.example.product.pojo.Product;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
-import com.netflix.hystrix.contrib.javanica.conf.HystrixPropertiesManager;
+import com.example.order.fallback.ProductServiceFallbackFactory;
+import com.example.order.pojo.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

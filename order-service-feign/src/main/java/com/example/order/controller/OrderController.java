@@ -1,7 +1,7 @@
-package com.example.product.controller;
+package com.example.order.controller;
 
-import com.example.product.pojo.Order;
-import com.example.product.service.OrderService;
+import com.example.order.pojo.Order;
+import com.example.order.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
