@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 //熔断降级
 // 声明需要调用的服务和服务熔断处理类
-@FeignClient(value = "product-service")
+@FeignClient(value = "nacos-product-service")
 public interface ProductService {
 
     /**
