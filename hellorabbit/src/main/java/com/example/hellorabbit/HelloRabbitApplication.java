@@ -1,13 +1,13 @@
-package com.example.rabbit;
+package com.example.hellorabbit;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RabbitApplication {
+public class HelloRabbitApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RabbitApplication.class, args);
+        SpringApplication.run(HelloRabbitApplication.class, args);
     }
 
 }

@@ -1,11 +1,11 @@
-package com.example.rabbit;
+package com.example.hellorabbit;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RabbitApplicationTests {
+class HelloRabbitApplicationTests {
 
     @Autowired
     private Sender sender;
