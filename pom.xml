@@ -29,6 +29,8 @@
         <module>order-service-feign</module>
         <module>nacos-product-service</module>
         <module>nacos-order-service</module>
+        <module>hellokafka</module>
+        <module>hellorabbit</module>
     </modules>
 
     <properties>
