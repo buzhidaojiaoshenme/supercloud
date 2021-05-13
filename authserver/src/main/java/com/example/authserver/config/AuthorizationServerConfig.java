@@ -9,6 +9,7 @@ import org.springframework.security.oauth2.config.annotation.configurers.ClientD
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 
 import javax.annotation.Resource;
@@ -31,6 +32,16 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Autowired
 	@Qualifier("redisTokenStore")
 	private TokenStore tokenStore;
+
+	@Override
+	public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+		oauthServer
+				.tokenKeyAccess("permitAll()")
+				.checkTokenAccess("permitAll()")
+				.allowFormAuthenticationForClients();
+
+		oauthServer.allowFormAuthenticationForClients();
+	}
 
 	/**
 	 * 密码模式
