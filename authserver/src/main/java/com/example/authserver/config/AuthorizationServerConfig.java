@@ -33,6 +33,14 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Qualifier("redisTokenStore")
 	private TokenStore tokenStore;
 
+	/**
+	 * 这个如果配置支持allowFormAuthenticationForClients的，且url中有client_id和client_secret的会走ClientCredentialsTokenEndpointFilter来保护
+	 * 如果没有支持allowFormAuthenticationForClients或者有支持但是url中没有client_id和client_secret的，走basic认证保护,需要将client_id和client_secret编码后放在请求头中
+	 *
+	 *
+	 * @param oauthServer
+	 * @throws Exception
+	 */
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
 		oauthServer
